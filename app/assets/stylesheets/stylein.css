@@ -1,0 +1,23 @@
+body{
+
+    background-color: rgb(165,165,165);
+    
+	
+}
+.fondo{
+	background-color: white;
+}
+
+
+h1{
+	font-family: Arial;
+	
+	font-size: 30px;
+
+}
+td{
+	font-family: 'Inconsolata', monospace;
+	font-style: bold;
+	font-size: 20px;
+
+}

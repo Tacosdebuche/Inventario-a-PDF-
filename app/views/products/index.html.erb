@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<head>
+  <link rel="stylesheet" type="text/css" href="../../assets/stylesheet/stylein.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  
+</head>
+<center>
+<h1>Productos de inventario</h1>
+
+<table class="fondo">
+  <thead>
+    <tr>
+      <th>Tílulo</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.pricing %></td>
+        <td><%= link_to 'Mostrar', product %></td>
+        <td><%= link_to 'Editar', edit_product_path(product) %></td>
+        <td><%= link_to 'Destruir', product, method: :delete, data: { confirm: 'Estás seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar un nuevo producto', new_product_path %>
+<%= link_to 'Generar PDF', products_path(format: :pdf) %>
+</center>
